@@ -1,0 +1,21 @@
+---
+- hosts: yamaha
+  connection: network_cli
+
+  tasks:
+  - name: get configuration
+    yamaha_network.swx.swx_command:
+      commands: 
+        - show running-config
+    register: result
+
+  - name: debug
+    debug:
+      msg: "{{ result.stdout_lines[0] }}"
+
+  vars:
+    ansible_network_os: yamaha_network.swx.swx
+    ansible_user: evers
+    ansible_ssh_pass: Lumiere205
+    ansible_become: true
+    ansible_become_password: Lumiere205

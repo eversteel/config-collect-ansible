@@ -1,0 +1,584 @@
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=12   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+ERROR! the playbook: test-git.yml could not be found
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+ERROR! the playbook: test-git.yml could not be found
+ERROR! the playbook: test-git.yml could not be found
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=12   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=12   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Ensure backup directory exists] ******************************************
+changed: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+fatal: [p-jfj-tob-swx-l2-03]: FAILED! => {"changed": false, "msg": "\nlibssh: The authenticity of host '192.168.4.66' can't be established due to 'Host is unknown: 89:b2:ec:6d:f5:7d:54:e3:39:42:d5:e7:e3:1d:46:6b:73:a3:c7:4c'.\nThe ssh-rsa key fingerprint is SHA1:ibLsbfV9VOM5QtXn4x1Ga3Ojx0w."}
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Git add configuration] ***************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=12   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+p-jfj-tob-swx-l2-03        : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+skipping: [p-jfj-tob-swx-l2-03]
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Git add configuration] ***************************************************
+fatal: [p-jfj-tob-swx-l2-03]: FAILED! => {"changed": true, "cmd": "cd /home/ec2-user/ansible/config-auto-collector\ngit add /home/ec2-user/ansible/config-auto-collector/configs/p-jfj-tob-swx-l2-03/running-config.json\ngit add /home/ec2-user/ansible/config-auto-collector/configs/p-jfj-tob-swx-l2-03/running-config.prev\n", "delta": "0:00:00.008263", "end": "2024-12-15 03:00:15.135061", "msg": "non-zero return code", "rc": 128, "start": "2024-12-15 03:00:15.126798", "stderr": "fatal: pathspec '/home/ec2-user/ansible/config-auto-collector/configs/p-jfj-tob-swx-l2-03/running-config.prev' did not match any files", "stderr_lines": ["fatal: pathspec '/home/ec2-user/ansible/config-auto-collector/configs/p-jfj-tob-swx-l2-03/running-config.prev' did not match any files"], "stdout": "", "stdout_lines": []}
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git commit configuration] ************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Git push to GitLab] ******************************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Backup previous configuration] *******************************************
+changed: [p-jfj-tob-swx-l2-01]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=12   changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+p-jfj-tob-swx-l2-03        : ok=7    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-03]
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+p-jfj-tob-swx-l2-03        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+p-jfj-tob-swx-l2-03        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+
+[WARNING]: Collection yamaha_network.swx does not support Ansible version
+2.15.13
+
+PLAY [yamaha] ******************************************************************
+
+TASK [gather date and time only] ***********************************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Ensure backup directory exists] ******************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Retrieve device configuration via SSH] ***********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Write current configuration to file] *************************************
+changed: [p-jfj-tob-swx-l2-01]
+changed: [p-jfj-tob-swx-l2-03]
+
+TASK [Check if config file exists previously] **********************************
+ok: [p-jfj-tob-swx-l2-03]
+ok: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate configuration hash (without date info)] ************************
+changed: [p-jfj-tob-swx-l2-03]
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Calculate previous configuration hash (without date info)] ***************
+changed: [p-jfj-tob-swx-l2-03]
+changed: [p-jfj-tob-swx-l2-01]
+
+TASK [Determine if configuration changed] **************************************
+ok: [p-jfj-tob-swx-l2-01]
+ok: [p-jfj-tob-swx-l2-03]
+
+TASK [Backup previous configuration] *******************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git add configuration] ***************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git commit configuration] ************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+TASK [Git push to GitLab] ******************************************************
+skipping: [p-jfj-tob-swx-l2-01]
+skipping: [p-jfj-tob-swx-l2-03]
+
+PLAY RECAP *********************************************************************
+p-jfj-tob-swx-l2-01        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+p-jfj-tob-swx-l2-03        : ok=8    changed=3    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+

@@ -1,0 +1,89 @@
+---
+- hosts: yamaha
+  connection: network_cli
+  gather_facts: no
+  serial: 1
+
+  tasks:
+    - name: gather date and time only
+      setup:
+        gather_subset:
+          - "date_time"
+    - name: Ensure backup directory exists
+      file:
+        path: "{{ backup_dir }}/{{ inventory_hostname }}"
+        state: directory
+
+    - name: Retrieve device configuration via SSH
+      yamaha_network.swx.swx_command:
+        commands: 
+          - show running-config
+      register: config_output
+
+    - name: Write current configuration to file
+      copy:
+        content: "{{ config_output.stdout_lines[0] | to_nice_json }}"
+        dest: "{{ backup_dir }}/{{ inventory_hostname }}/running-config.json"
+      register: config_file
+
+    - name: Check if config file exists previously
+      stat:
+        path: "{{ backup_dir }}/{{ inventory_hostname }}/running-config.prev"
+      register: prev_config_file
+
+    - name: Compare configurations
+      block:
+        - name: Calculate configuration hash (without date info)
+          shell: |
+            sed '/^    "!  Current Time:/d' {{ backup_dir }}/{{ inventory_hostname }}/running-config.json | md5sum | awk '{print $1}'
+          register: current_config_hash
+
+        - name: Calculate previous configuration hash (without date info)
+          shell: |
+            sed '/^    "!  Current Time:/d' {{ backup_dir }}/{{ inventory_hostname }}/running-config.prev | md5sum | awk '{print $1}'
+          register: previous_config_hash
+          when: prev_config_file.stat.exists
+
+        - name: Determine if configuration changed
+          set_fact:
+            config_changed: "{{ not prev_config_file.stat.exists or current_config_hash.stdout != previous_config_hash.stdout }}"
+
+    - name: Backup and push to GitLab if configuration changed
+      block:
+        - name: Backup previous configuration
+          copy:
+            src: "{{ backup_dir }}/{{ inventory_hostname }}/running-config.json"
+            dest: "{{ backup_dir }}/{{ inventory_hostname }}/running-config.prev"
+            remote_src: yes
+        - name: Git add configuration
+          shell: |
+            cd {{ gitlab_repo_path }}
+            git add {{ backup_dir }}/{{ inventory_hostname }}/running-config.json
+          delegate_to: localhost
+
+        - name: Git commit configuration
+          shell: |
+            cd {{ gitlab_repo_path }}
+            git commit -m "Config backup for {{ inventory_hostname }} - {{ ansible_date_time.date }}"
+          delegate_to: localhost
+
+        - name: Git push to GitLab
+          shell: |
+            cd {{ gitlab_repo_path }}
+            git push -u {{ gitlab_remote }} {{ gitlab_branch }}
+
+      when: config_changed | default(false)
+
+  vars:
+    git_access_token: glpat-WrBBs2BSUR5MgfLCXVRE
+    git_username: config-collector
+    git_repository_name: config-auto-collector
+    ansible_network_os: yamaha_network.swx.swx
+    ansible_user: evers
+    ansible_ssh_pass: Lumiere205
+    ansible_become: true
+    ansible_become_password: Lumiere205
+    gitlab_repo_path: "/home/ec2-user/ansible/config-auto-collector"
+    gitlab_remote: "origin"
+    gitlab_branch: "main"
+    backup_dir: "/home/ec2-user/ansible/config-auto-collector/configs"

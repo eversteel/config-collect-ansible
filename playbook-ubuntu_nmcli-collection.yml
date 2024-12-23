@@ -1,0 +1,123 @@
+---
+- hosts: ubuntu
+  gather_facts: no
+  serial: 1
+
+  tasks:
+    - name: Debug paths and file creation
+      block:
+      - name: Show backup directory path
+        debug:
+          msg:
+            - "Backup Dir Full Path: {{ backup_dir }}"
+            - "Inventory Hostname: {{ inventory_hostname }}"
+            - "Full File Path: {{ backup_dir }}/{{ inventory_hostname }}/running-config.txt"
+
+      - name: Ensure directory permissions
+        file:
+          path: "{{ backup_dir }}/{{ inventory_hostname }}"
+          state: directory
+          mode: '0755'
+          recurse: yes
+        delegate_to: localhost
+
+    - name: gather date and time only
+      setup:
+        gather_subset:
+          - "date_time"
+
+    - name: Ensure backup directory exists
+      file:
+        path: "{{ backup_dir }}/{{ inventory_hostname }}"
+        state: directory
+      delegate_to: localhost
+
+    - name: Execute nmcli connection show command via ssh
+      ansible.builtin.command: 
+        cmd: sudo nmcli connection show {{ interface_name }}
+      become: true
+      register: config_output
+
+    - name: Display nmcli connection details
+      ansible.builtin.debug:
+        var: config_output.stdout_lines
+
+    - name: Write configuration with explicit permissions
+      copy:
+        content: "{{ config_output.stdout_lines | to_nice_json }}"
+        dest: "{{ backup_dir }}/{{ inventory_hostname }}/running-config.json"
+        mode: '0644'
+      register: config_file
+      delegate_to: localhost
+
+    - name: Check if config file exists previously
+      stat:
+        path: "{{ backup_dir }}/{{ inventory_hostname }}/running-config-prev.prev"
+      register: prev_config_file
+      delegate_to: localhost
+
+    - name: Compare configurations
+      block:
+        - name: Calculate configuration hash (without date info)
+          shell: |
+            sed '/^    "connection.timestamp:/d' {{ backup_dir }}/{{ inventory_hostname }}/running-config.json | md5sum | awk '{print $1}'
+          register: current_config_hash
+          delegate_to: localhost
+
+        - name: Calculate previous configuration hash (without date info)
+          shell: |
+            sed '/^    "connection.timestamp:/d' {{ backup_dir }}/{{ inventory_hostname }}/running-config-prev.prev | md5sum | awk '{print $1}'
+          register: previous_config_hash
+          delegate_to: localhost
+          when: prev_config_file.stat.exists
+
+        - name: Determine if configuration changed
+          set_fact:
+            config_changed: "{{ not prev_config_file.stat.exists or current_config_hash.stdout != previous_config_hash.stdout }}"
+          delegate_to: localhost
+
+    - name: Backup and push to GitLab if configuration changed
+      block:
+        - name: Backup previous configuration
+          copy:
+            src: "{{ backup_dir }}/{{ inventory_hostname }}/running-config.json"
+            dest: "{{ backup_dir }}/{{ inventory_hostname }}/running-config-prev.prev"
+            remote_src: yes
+          delegate_to: localhost
+
+        - name: Git add configuration
+          shell: |
+            cd {{ gitlab_repo_path }}
+            git add {{ backup_dir }}/{{ inventory_hostname }}/running-config.json
+          delegate_to: localhost
+          retries: 3
+
+        - name: Git commit configuration
+          shell: |
+            cd {{ gitlab_repo_path }}
+            git commit -m "Config backup for {{ inventory_hostname }} - {{ ansible_date_time.date }}"
+          delegate_to: localhost
+          retries: 10
+
+        - name: Git push to GitLab
+          shell: |
+            cd {{ gitlab_repo_path }}
+            git push -u {{ gitlab_remote }} {{ gitlab_branch }}
+          delegate_to: localhost
+          retries: 3
+
+      when: config_changed | default(false)
+
+  vars:
+    git_access_token: glpat-WrBBs2BSUR5MgfLCXVRE
+    git_username: config-collector
+    git_repository_name: config-auto-collector
+#    ansible_network_os: yamaha_network.swx.swx
+    ansible_user: evers
+    ansible_ssh_pass: Lumiere205
+    ansible_become: true
+    ansible_become_password: Lumiere205
+    gitlab_repo_path: "/home/ec2-user/ansible/config-auto-collector"
+    gitlab_remote: "origin"
+    gitlab_branch: "main"
+    backup_dir: "/home/ec2-user/ansible/config-auto-collector/configs"
